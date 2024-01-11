@@ -38,6 +38,10 @@
   </title>
   <link rel="canonical" href="{{ .Permalink }}">
   <link rel="author" href="humans.txt" />
+  <link rel="preload" href="{{ "/fonts/Cartridge-Regular.woff2" | relURL }}" as="font" type="font/woff2">
+  <link rel="preload" href="{{ "/fonts/Cartridge-Bold.woff2" | relURL }}" as="font" type="font/woff2">
+  <link rel="preload" href="{{ "/fonts/iAWriterMonoS-Regular.woff2" | relURL }}" as="font" type="font/woff2">
   <link rel="stylesheet" href="{{ "css/main.css" | relURL }}?{{ .Site.Params.theme_seconds }}">
+  <link rel="stylesheet" href="{{ "css/juhas-mods.css" | relURL }}?{{ .Site.Params.theme_seconds }}">
   {{ partial "microblog_head.html" . }}
 </head>

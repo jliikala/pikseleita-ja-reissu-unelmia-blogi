@@ -1,0 +1,114 @@
+/* Juha's mods to tiny theme */
+
+@font-face {
+  font-family: "Cartridge";
+  font-weight: normal;
+  font-style: normal;
+  src: url("/fonts/Cartridge-Regular.otf") format("opentype"),
+    url("/fonts/Cartridge-Regular.woff2") format("woff2"),
+    url("/fonts/Cartridge-Regular.woff") format("woff");
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Cartridge";
+  font-weight: bold;
+  font-style: normal;
+  src: url("/fonts/Cartridge-Bold.otf") format("opentype"),
+    url("/fonts/Cartridge-Bold.woff2") format("woff2"),
+    url("/fonts/Cartridge-Bold.woff") format("woff");
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "iA Writer Mono";
+  font-weight: normal;
+  font-style: normal;
+  src: url("/fonts/iAWriterMonoS-Regular.eot") format("embedded-opentype"),
+    url("/fonts/iAWriterMonoS-Regular.woff2") format("woff2"),
+    url("/fonts/iAWriterMonoS-Regular.woff") format("woff");
+  font-display: swap;
+}
+
+:root {
+	--text: #162622;
+	--links: #bd2758;
+	--links-visited: #6496c1;
+	--bg-color: #f5f4f2;
+	--font-stack-mono: "iA Writer Mono", monospace;
+  --font-stack-sans: "Avenir Next", Avenir, "-apple-system", BlinkMacSystemFont, "helvetica neue", Helvetica, Arial, sans-serif;
+	--font-stack-titles: Cartridge, var(--font-stack-sans);
+}
+
+/* Dark mode */
+@media (prefers-color-scheme: dark) {
+	:root {
+		--text: #b9bfc6;
+		--links: #72A9D4;
+		--links-visited: #7a9bb7;
+		--bg-color: #111920;
+	}
+}
+
+body {
+  background: #f5f4f2 url(https://images.unsplash.com/photo-1682687221323-6ce2dbc803ab?q=80&w=2574&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDF8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D) repeat top left fixed;
+  font-family: 'Avenir Next';
+  max-width: 48em;
+}
+
+h1, h2, h3, h4 {
+  font-family: Cartridge;
+}
+
+.page-content, .site-header {
+  background: #fff;
+}
+
+.page-content {
+  padding: 2em;
+}
+
+.site-header {
+  padding: 1em 2em 1em 2em;
+}
+
+a {
+  color: var(--text);
+  text-decoration: none;
+}
+
+a.post-date {
+  color: var(--text);
+}
+
+.e-content a {
+  color: var(--links);
+}
+
+a:visited {
+  color: var(--text);
+}
+
+nav a, nav a:visited, nav a:hover, a.conversation-on-mb, a.reply-on-mastodon, a.reply-by-email, a.read-more {
+  color: var(--text);
+  border: 1px solid var(--text);
+}
+
+nav a:hover, a.conversation-on-mb:hover, a.reply-on-mastodon:hover, a.reply-by-email:hover, a.read-more:hover {
+  background: none;
+}
+
+nav ul li, ul.reply-buttons li {
+  font-family: var(--font-stack-mono);
+}
+
+.site-header {
+  position: relative;
+  margin-top: 8rem;
+  padding-top: 3rem;
+}
+
+.site-header a .u-photo {
+	position: absolute;
+	top: -50px;
+}
