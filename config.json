@@ -1,3 +1,8 @@
 {
-	"paginate": 20
+	"paginate": 20,
+	"defaultContentLanguage": "fi",
+  "defaultContentLanguageInSubdir": true,
+  "params": {
+    "dateForm": "02.01.2006"
+  }
 }
