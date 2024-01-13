@@ -6,13 +6,13 @@
     {{ $paginator := .Paginate $posts }}
     {{ range .Paginator.Pages }}
       {{ if .Title }}
-        <div class="post-preview h-entry {{ range .Params.categories }} {{ . | urlize | lower }}{{ end }}">
+        <article class="post-preview h-entry {{ range .Params.categories }} {{ . | urlize | lower }}{{ end }}">
           <a href="{{ .Permalink }}" class="post-date u-url"><time class="dt-published" datetime="{{ .Date.Format "02.01.2006 15:04:05 -0700" }}">{{ .Date | time.Format ":date_long" }}</time> ∞</a>
           <h2 class="post-title p-name"><a href="{{ .Permalink }}">{{ .Title }}</a></h2>
           <div class="p-summary">
             {{ .Summary | safeHTML }}
           </div>
-        </div>
+        </article>
       {{ end }}
     {{ end }}
   </div>
