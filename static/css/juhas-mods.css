@@ -33,6 +33,7 @@
 	--links: #bd2758;
 	--links-visited: #6496c1;
 	--bg-color: #f5f4f2;
+  --bg-color-var: #f4e6da;
 	--font-stack-mono: "iA Writer Mono", monospace;
   --font-stack-sans: "Avenir Next", Avenir, "-apple-system", BlinkMacSystemFont, "helvetica neue", Helvetica, Arial, sans-serif;
 	--font-stack-titles: Cartridge, var(--font-stack-sans);
@@ -45,12 +46,14 @@
 		--links: #72A9D4;
 		--links-visited: #7a9bb7;
 		--bg-color: #111920;
+    --bg-color-var: #19150c;
 	}
 }
 
 body {
-  background: #f5f4f2 url(https://images.unsplash.com/photo-1682687221323-6ce2dbc803ab?q=80&w=2574&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDF8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D) repeat top left fixed;
+  background: #f5f4f2 url(https://images.unsplash.com/photo-1606740278733-39510c57488a?q=80&w=2100&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D) repeat top left fixed;
   font-family: 'Avenir Next';
+  background-size: cover;
   max-width: 48em;
 }
 
@@ -117,6 +120,10 @@ nav.site-nav .seuraa-blogia:hover {
   color: var(--button-text);
 }
 
+.site-nav ul {
+  margin: 0;
+}
+
 nav ul li, ul.reply-buttons li {
   font-family: var(--font-stack-mono);
 }
@@ -134,10 +141,6 @@ nav ul li, ul.reply-buttons li {
 	padding: 5px;
 }
 
-.site-title-tagline {
-  margin-bottom: 1rem;
-}
-
 .site-tagline {
   font-family: var(--font-stack-mono);
 }
@@ -150,6 +153,8 @@ nav ul li, ul.reply-buttons li {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  flex-wrap: wrap;
+  gap: 1rem;
 }
 
 .social-links {
@@ -166,12 +171,16 @@ nav ul li, ul.reply-buttons li {
   body {
     padding: 0 0em;
     background-image: none;
-    background-color: var(--bg-color)
+    background: var(--bg-color-var) url(https://images.unsplash.com/photo-1705133843790-1b8b54e3c918?q=80&w=700&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D) no-repeat;
   }
   .page-content, .site-header {
     padding: 2rem 1rem 0rem 1rem;
   }
   .site-header {
     margin-bottom: 0;
+  }
+
+  .description {
+    margin-top: 1rem;
   }
 }

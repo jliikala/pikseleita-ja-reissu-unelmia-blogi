@@ -1,7 +1,8 @@
 # site.toml
 
-name = "Pikseleitä ja Reissu-unelmia"
-description = "Fronttidevaaja ja pikselinviilaaja Oulusta. Touhunnut nettisivujen ja sovellusten parissa ammatikseen vuodesta 2005, harrastemaisesti kauemminkin. Intohimoinen reissaaja. Scifi- ja kauhuleffat kolahtaa. Samoin synthwave ja Blade Runner tyyliset musamaisemat. Moikka! 👋"
+name = "Juha Liikala"
+tagline = "Pikseleitä ja Reissu-unelmia blogi"
+description = "Kirjoittaja on fronttidevaaja ja pikselinviilaaja Oulusta. Touhunnut nettisivujen ja sovellusten parissa ammatikseen vuodesta 2005, harrastemaisesti kauemminkin. Intohimoinen reissaaja. Scifi- ja kauhuleffat kolahtaa. Samoin synthwave ja Blade Runner tyyliset musamaisemat. Tervetuloa blogiin! 👋"
 language = "fi"
 url = "https://www.juhaliikala.fi"
 fediverse_username = "@seuraa@juhaliikala.fi"
