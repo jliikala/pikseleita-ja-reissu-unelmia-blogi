@@ -2,10 +2,10 @@
 <header class="post-header">
 	<h2 class="post-title">Archive</h2>
 </header>
-{{ $list := ($.Site.GetPage "taxonomyTerm" "categories").Pages }}
+{{ $list := ($.Site.GetPage "taxonomyTerm" "kategoriat").Pages }}
 {{ if gt (len $list) 0 }}
 <div class="archive-categories">
-	<h3>Categories</h3>
+	<h3>Kategoriat</h3>
 	<ul>
 		{{ range $list }}
 		<li><a href="{{ .Permalink }}">{{ .Title }}</a></li>
