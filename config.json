@@ -5,5 +5,5 @@
   "params": {
     "dateForm": "02.01.2006"
   },
-	"taxonomies":{"category":"kategoriat"}
+	"taxonomies":{"kategoria":"kategoriat"}
 }
