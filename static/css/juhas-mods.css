@@ -108,6 +108,15 @@ nav a:hover, a.conversation-on-mb:hover, a.reply-on-mastodon:hover, a.reply-by-e
   background: none;
 }
 
+nav.site-nav .seuraa-blogia {
+  border: 1px solid var(--link);
+  color: var(--link);
+}
+nav.site-nav .seuraa-blogia:hover {
+  background: var(--link);
+  color: var(--button-text);
+}
+
 nav ul li, ul.reply-buttons li {
   font-family: var(--font-stack-mono);
 }
@@ -123,6 +132,18 @@ nav ul li, ul.reply-buttons li {
 	top: -50px;
   background-color: var(--bg-color);
 	padding: 5px;
+}
+
+.site-title-tagline {
+  margin-bottom: 1rem;
+}
+
+.site-tagline {
+  font-family: var(--font-stack-mono);
+}
+
+.site-title {
+  margin-bottom: 0;
 }
 
 .site-title-with-links {

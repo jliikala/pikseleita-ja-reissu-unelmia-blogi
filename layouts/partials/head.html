@@ -28,7 +28,7 @@
   <title>
     {{ block "title" . }}
     {{ if .IsHome }}
-      {{ .Site.Title }}
+      {{ .Site.Title }} | {{ .Site.Data.site.name }}
     {{ else if .Title }}
       {{ .Title }} | {{ .Site.Title }}
     {{ else }}
