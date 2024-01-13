@@ -30,7 +30,7 @@
 
 :root {
 	--text: #162622;
-	--links: #bd2758;
+	--links: #b51818;
 	--links-visited: #6496c1;
 	--bg-color: #f5f4f2;
   --bg-color-var: #f4e6da;
@@ -88,6 +88,7 @@ h2 a:hover {
 a {
   color: var(--text);
   text-decoration: none;
+  transition: all .4s ease;
 }
 
 a.post-date {
@@ -95,6 +96,11 @@ a.post-date {
 }
 
 .e-content a {
+  color: var(--links);
+  font-weight: 600;
+}
+
+.e-content a:visited {
   color: var(--links);
 }
 
@@ -108,7 +114,8 @@ nav a, nav a:visited, nav a:hover, a.conversation-on-mb, a.reply-on-mastodon, a.
 }
 
 nav a:hover, a.conversation-on-mb:hover, a.reply-on-mastodon:hover, a.reply-by-email:hover, a.read-more:hover {
-  background: none;
+  background: var(--text);
+  color: var(--bg-color);
 }
 
 nav.site-nav .seuraa-blogia {
@@ -164,6 +171,15 @@ nav ul li, ul.reply-buttons li {
 
 .social-links svg {
   fill: var(--text)
+}
+
+article .p-summary a, article .post-content a {
+  color: var(--links);
+  font-weight: 600;
+}
+
+article .p-summary a:visited, article .post-content a:visited {
+  color: var(--links);
 }
 
 @media screen and (max-width: 700px) {
