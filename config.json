@@ -5,5 +5,8 @@
   "params": {
     "dateForm": "02.01.2006"
   },
-	"taxonomies":{"kategoria":"kategoriat"}
+	"taxonomies":{"kategoria":"kategoriat"},
+  "permalinks": {
+    "categories": "/kategoriat/:slug/"
+  }
 }
