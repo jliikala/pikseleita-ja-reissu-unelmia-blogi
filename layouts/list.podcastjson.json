@@ -10,8 +10,8 @@
 		"explicit": false,
 		"categoriat": [
 			{
-				"kategoria": {{ .Site.Params.itunes_category | jsonify }},
-				"subkategoria": {{ .Site.Params.itunes_subcategory | jsonify }}
+				"category": {{ .Site.Params.itunes_category | jsonify }},
+				"subcategory": {{ .Site.Params.itunes_subcategory | jsonify }}
 			}
 		]
 	},

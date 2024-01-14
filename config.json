@@ -1,12 +1,7 @@
 {
 	"paginate": 20,
 	"defaultContentLanguage": "fi",
-  "defaultContentLanguageInSubdir": true,
   "params": {
     "dateForm": "02.01.2006"
-  },
-	"taxonomies":{"kategoria":"kategoriat"},
-  "permalinks": {
-    "categories": "/kategoriat/:slug/"
   }
 }

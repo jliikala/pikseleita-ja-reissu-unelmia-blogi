@@ -2,7 +2,7 @@
 <header class="post-header">
 	<h2 class="post-title">Archive</h2>
 </header>
-{{ $list := ($.Site.GetPage "taxonomyTerm" "kategoriat").Pages }}
+{{ $list := ($.Site.GetPage "taxonomyTerm" "categories").Pages }}
 {{ if gt (len $list) 0 }}
 <div class="archive-categories">
 	<h3>Kategoriat</h3>
