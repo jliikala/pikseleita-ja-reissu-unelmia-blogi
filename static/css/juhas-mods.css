@@ -173,13 +173,29 @@ nav ul li, ul.reply-buttons li {
   fill: var(--text)
 }
 
-article .p-summary a, article .post-content a {
+article .p-summary a, article .post-content a, .category-list a {
   color: var(--links);
   font-weight: 600;
 }
 
 article .p-summary a:visited, article .post-content a:visited {
   color: var(--links);
+}
+
+.category-list {
+  list-style: none;
+  padding: 0;
+  column-count: 3;
+}
+
+.full-archives .u-url {
+  font-size: 0.8em;
+  color: var(--links);
+  font-weight: 600;
+}
+
+.full-archives .h-entry {
+  margin-bottom: 1rem;
 }
 
 @media screen and (max-width: 700px) {
