@@ -1,8 +1,8 @@
 # site.toml
 
 name = "Juha Liikala"
-tagline = "Pikseleitä ja Reissu-unelmia blogi"
-description = "Kirjoittaja on fronttidevaaja ja pikselinviilaaja Oulusta. Touhunnut nettisivujen ja sovellusten parissa ammatikseen vuodesta 2005, harrastemaisesti kauemminkin. Intohimoinen reissaaja. Scifi- ja kauhuleffat kolahtaa. Samoin synthwave ja Blade Runner tyyliset musamaisemat. Tervetuloa blogiin! 👋"
-language = "fi"
-url = "https://www.juhaliikala.fi"
-fediverse_username = "@seuraa@juhaliikala.fi"
+tagline = "Pixels & Travel Dreaming 🌴 - The Blog"
+description = "Oh hi there! 👋 I'm a front-end developer and pixel tweaker from Oulu, Finland. Been tinkering with websites and applications professionally since 2005, and as a hobby even longer. A passionate traveler. Enjoy sci-fi and horror movies. Also, a fan of synthwave and Blade Runner-style musical landscapes. This is my tiny corner of the internet that I like to call home. Welcome!"
+language = "en"
+url = "https://www.juhaliikala.com"
+fediverse_username = "@juhajuhaliikala.com"

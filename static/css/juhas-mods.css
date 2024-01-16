@@ -135,6 +135,17 @@ nav ul li, ul.reply-buttons li {
   font-family: var(--font-stack-mono);
 }
 
+.header-nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+
+.header-nav .social-links a {
+  line-height: 0.8;
+}
+
 .site-header {
   position: relative;
   margin-top: 8rem;

@@ -1,6 +1,5 @@
 {
 	"paginate": 20,
-	"defaultContentLanguage": "fi",
   "params": {
     "dateForm": "02.01.2006"
   }

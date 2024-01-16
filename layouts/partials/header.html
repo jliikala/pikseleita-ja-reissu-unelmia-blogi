@@ -16,15 +16,18 @@
 			</nav>
 		</div>
     <p class="description">{{ .Site.Data.site.description }}</p>
-    <nav class="site-nav">
-    	<ul>
-		{{ range .Site.Menus.main }}
-			{{ if .Page.Params.redirect_url }}
-				<li><a class="page-link {{ .Name }}" href="{{ .Page.Params.redirect_url }}">{{ .Name }}</a></li>
-			{{ else }}
-				<li><a class="page-link {{ .Name }}" href="{{ .URL | relLangURL | safeURL }}">{{ .Name }}</a></li>
-			{{ end }}
-		{{ end }}
-		</ul>
-    </nav>
+    <div class="header-nav">
+			<nav class="site-nav">
+				<ul>
+				{{ range .Site.Menus.main }}
+					{{ if .Page.Params.redirect_url }}
+						<li><a class="page-link {{ .Name }}" href="{{ .Page.Params.redirect_url }}">{{ .Name }}</a></li>
+					{{ else }}
+						<li><a class="page-link {{ .Name }}" href="{{ .URL | relLangURL | safeURL }}">{{ .Name }}</a></li>
+					{{ end }}
+				{{ end }}
+				</ul>
+			</nav>
+			{{ partial "social-links.html" . }}
+		</div>
 </header>
