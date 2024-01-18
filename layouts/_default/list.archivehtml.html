@@ -1,11 +1,11 @@
 {{ define "main" }}
 <header class="post-header">
-	<h2 class="post-title">Arkisto</h2>
+	<h2 class="post-title">Feed</h2>
 </header>
 {{ $list := ($.Site.GetPage "taxonomyTerm" "categories").Pages }}
 {{ if gt (len $list) 0 }}
 <div class="archive-categories">
-	<h3>Kategoriat</h3>
+	<h3>Posts by category</h3>
 	<ul class="category-list">
 		{{ range $list }}
 		<li><a href="{{ .Permalink }}">{{ .Title }}</a></li>
@@ -14,7 +14,7 @@
 </div>
 {{ end }}
 <div class="full-archives h-feed">
-	<h3>Kaikki postaukset</h3>
+	<h3>Full feed</h3>
 	{{ $list := (where .Site.Pages "Type" "post") }}
 	{{ range $list }}
 

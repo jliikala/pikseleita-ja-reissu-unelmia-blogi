@@ -140,6 +140,7 @@ nav ul li, ul.reply-buttons li {
   align-items: center;
   justify-content: space-between;
   flex-wrap: wrap;
+  gap: 1rem;
 }
 
 .header-nav .social-links a {
@@ -184,12 +185,12 @@ nav ul li, ul.reply-buttons li {
   fill: var(--text)
 }
 
-article .p-summary a, article .post-content a, .category-list a {
+article .p-summary a, article .post-content a, .category-list a, .post a {
   color: var(--links);
   font-weight: 600;
 }
 
-article .p-summary a:visited, article .post-content a:visited {
+article .p-summary a:visited, article .post-content a:visited, .post a:visited {
   color: var(--links);
 }
 
