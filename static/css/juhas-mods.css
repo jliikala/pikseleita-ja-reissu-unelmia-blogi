@@ -244,7 +244,7 @@ article .p-summary a:visited, article .post-content a:visited, .post a:visited {
   left: 100px;
 }
 
-.site-footer, .site-footer a {
+.site-footer, .site-footer a, .site-footer .custom_footer {
   color: #fff;
 }
 
