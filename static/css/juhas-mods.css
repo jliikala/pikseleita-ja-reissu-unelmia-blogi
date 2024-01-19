@@ -238,6 +238,12 @@ article .p-summary a:visited, article .post-content a:visited, .post a:visited {
   display: inline;
 }
 
+.itsme {
+  position: absolute;
+  top: 20px;
+  left: 100px;
+}
+
 @media screen and (max-width: 700px) {
 
   body {
