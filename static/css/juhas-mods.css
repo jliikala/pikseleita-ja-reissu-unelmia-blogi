@@ -244,6 +244,14 @@ article .p-summary a:visited, article .post-content a:visited, .post a:visited {
   left: 100px;
 }
 
+.site-footer, .site-footer a {
+  color: #fff;
+}
+
+.site-footer a {
+  font-weight: 600;
+}
+
 @media screen and (max-width: 700px) {
 
   body {
