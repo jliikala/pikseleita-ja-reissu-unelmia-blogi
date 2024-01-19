@@ -217,6 +217,10 @@ article .p-summary a:visited, article .post-content a:visited, .post a:visited {
   margin-bottom: 2rem;
 }
 
+.post_list article:last-of-type, .full-archives div:last-of-type {
+  border-bottom: none;
+}
+
 .full-archives .h-entry {
   border-bottom: 1px dashed var(--border-color);
   padding-bottom: 1rem !important;
