@@ -34,6 +34,7 @@
 	--links-visited: #6496c1;
 	--bg-color: #f5f4f2;
   --bg-color-var: #f4e6da;
+  --border-color: #ccc;
 	--font-stack-mono: "iA Writer Mono", monospace;
   --font-stack-sans: "Avenir Next", Avenir, "-apple-system", BlinkMacSystemFont, "helvetica neue", Helvetica, Arial, sans-serif;
 	--font-stack-titles: Cartridge, var(--font-stack-sans);
@@ -47,6 +48,7 @@
 		--links-visited: #7a9bb7;
 		--bg-color: #111920;
     --bg-color-var: #19150c;
+    --border-color: #ccc;
 	}
 }
 
@@ -208,6 +210,24 @@ article .p-summary a:visited, article .post-content a:visited, .post a:visited {
 
 .full-archives .h-entry {
   margin-bottom: 1rem;
+}
+
+.post_list article {
+  border-bottom: 1px dashed var(--border-color);
+  margin-bottom: 2rem;
+}
+
+.full-archives .h-entry {
+  border-bottom: 1px dashed var(--border-color);
+  padding-bottom: 1rem !important;
+}
+
+.full-archives .h-entry .p-summary {
+  margin-bottom: 0;
+}
+
+.full-archives .h-entry .p-summary p:last-of-type {
+  margin-bottom: 0;
 }
 
 @media screen and (max-width: 700px) {
