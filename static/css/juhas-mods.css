@@ -40,6 +40,10 @@
 	--font-stack-titles: Cartridge, var(--font-stack-sans);
 }
 
+.avatar-dark {
+  display: none;
+}
+
 /* Dark mode */
 @media (prefers-color-scheme: dark) {
 	:root {
@@ -50,6 +54,12 @@
     --bg-color-var: #19150c;
     --border-color: #ccc;
 	}
+  .avatar-dark {
+    display: block
+  }
+  .avatar-light {
+    display: none;
+  }
 }
 
 body {
