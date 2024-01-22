@@ -147,7 +147,7 @@ nav ul li, ul.reply-buttons li {
   font-family: var(--font-stack-mono);
 }
 
-.header-nav {
+.header-nav, .footer-nav {
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -155,8 +155,13 @@ nav ul li, ul.reply-buttons li {
   gap: 1rem;
 }
 
-.header-nav .social-links a {
+.header-nav .social-links a, .footer-nav .social-links a {
   line-height: 0.8;
+}
+
+.footer-nav {
+  font-size: 1rem;
+  justify-content: center;
 }
 
 .site-header {
@@ -264,6 +269,14 @@ article .p-summary a:visited, article .post-content a:visited, .post a:visited {
 
 .subscribe-form {
   margin-bottom: 2rem;
+}
+
+footer {
+  margin-top: 0;
+  background-color: var(--bg-color);
+  padding-bottom: 1rem;
+  padding-top: 3rem;
+  border-top: 1px dashed var(--border-color)
 }
 
 @media screen and (max-width: 700px) {
