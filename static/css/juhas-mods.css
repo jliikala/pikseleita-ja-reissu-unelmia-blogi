@@ -285,6 +285,10 @@ footer {
   border-top: 1px dashed var(--border-color)
 }
 
+header p {
+  margin-top: 1rem;
+}
+
 @media screen and (max-width: 700px) {
 
   body {
