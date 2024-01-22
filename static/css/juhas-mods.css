@@ -288,7 +288,7 @@ article .p-summary a:visited, article .post-content a:visited, .post a:visited {
     left: 80px;
   }
 
-  .home .site-title-with-links, .home .description, .home .header-nav {
+  .page .site-title-with-links, .page .description, .page .header-nav {
     display: none;
   }
 }

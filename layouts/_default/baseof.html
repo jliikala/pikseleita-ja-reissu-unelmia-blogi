@@ -3,7 +3,7 @@
 
 {{ partial "head.html" . }}
 
-<body {{ if .IsHome }}class="home"{{ end }}>
+<body class="{{ if .IsHome }}home{{ else }}page{{ end }}">
   {{ partial "header.html" . }}
 
   <div class="page-content">
