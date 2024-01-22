@@ -162,6 +162,11 @@ nav ul li, ul.reply-buttons li {
 .footer-nav {
   font-size: 1rem;
   justify-content: center;
+  display: none;
+}
+
+.footer-nav .page {
+  display: flex;
 }
 
 .site-header {
