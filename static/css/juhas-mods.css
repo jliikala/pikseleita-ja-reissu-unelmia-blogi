@@ -279,4 +279,8 @@ article .p-summary a:visited, article .post-content a:visited, .post a:visited {
   .description {
     margin-top: 1rem;
   }
+
+  .itsme {
+    left: 80px;
+  }
 }
