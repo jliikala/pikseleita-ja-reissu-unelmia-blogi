@@ -165,7 +165,7 @@ nav ul li, ul.reply-buttons li {
   display: none;
 }
 
-.footer-nav .page {
+.page .footer-nav {
   display: flex;
 }
 
