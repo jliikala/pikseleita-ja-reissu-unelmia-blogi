@@ -167,6 +167,7 @@ nav ul li, ul.reply-buttons li {
 
 .page .footer-nav {
   display: flex;
+  flex-direction: column;
 }
 
 .site-header {
