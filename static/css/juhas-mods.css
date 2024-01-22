@@ -287,4 +287,8 @@ article .p-summary a:visited, article .post-content a:visited, .post a:visited {
   .itsme {
     left: 80px;
   }
+
+  .home .site-title-with-links, .home .description, .home .header-nav {
+    display: none;
+  }
 }
