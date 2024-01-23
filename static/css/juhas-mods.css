@@ -63,7 +63,7 @@
 }
 
 body {
-  background: #f5f4f2 url(https://images.unsplash.com/photo-1509380247342-83d059a517a6?q=80&w=2100&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D) repeat top left fixed;
+  background: #f5f4f2 url(https://images.unsplash.com/photo-1705714135183-dbe57919b735?q=80&w=2100&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D) repeat top left fixed;
   font-family: 'Avenir Next';
   background-size: cover;
   max-width: 48em;
@@ -286,7 +286,7 @@ article .p-summary a:visited, article .post-content a:visited, .post a:visited {
 }
 
 .subscribe-form input[type="submit"] {
-  border-left: 0 !important;
+  border-left: 0;
 }
 
 footer {
@@ -306,7 +306,7 @@ header p {
   body {
     padding: 0 0em;
     background-image: none;
-    background: var(--bg-color-var) url(https://images.unsplash.com/photo-1705133843790-1b8b54e3c918?q=80&w=700&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D) no-repeat;
+    background: var(--bg-color-var) url(https://images.unsplash.com/photo-1705714135183-dbe57919b735?q=80&w=700&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D) no-repeat;
   }
   .page-content, .site-header {
     padding: 2rem 1rem 0rem 1rem;
