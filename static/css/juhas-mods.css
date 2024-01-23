@@ -131,12 +131,16 @@ nav a:hover, a.conversation-on-mb:hover, a.reply-on-mastodon:hover, a.reply-by-e
 }
 
 nav.site-nav .seuraa-blogia {
-  border: 1px solid var(--link);
-  color: var(--link);
+  background: var(--link);
+  color: var(--button-text);
+  border: 1px solid transparent;
+  opacity: 0.8;
 }
 nav.site-nav .seuraa-blogia:hover {
   background: var(--link);
   color: var(--button-text);
+  border: 1px solid transparent;
+  opacity: 1;
 }
 
 .site-nav ul {
