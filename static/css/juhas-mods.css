@@ -270,10 +270,6 @@ article .p-summary a:visited, article .post-content a:visited, .post a:visited {
   left: 100px;
 }
 
-.site-footer, .site-footer a, .site-footer .custom_footer {
-  color: #fff;
-}
-
 .site-footer a {
   font-weight: 600;
 }
@@ -281,17 +277,16 @@ article .p-summary a:visited, article .post-content a:visited, .post a:visited {
 .subscribe-form {
   margin-bottom: 2rem;
   display: flex;
-  flex-wrap: wrap;
-  gap: 1rem;
+  flex-direction: row;
 }
 
 .subscribe-form input[type="text"], .subscribe-form input[type="submit"] {
   margin: 0;
-  border-radius: 0;
+  border-radius: 0 !important;
 }
 
 .subscribe-form input[type="submit"] {
-  border-left: 0;
+  border-left: 0 !important;
 }
 
 footer {
@@ -330,5 +325,11 @@ header p {
 
   .page .site-title-with-links, .page .description, .page .header-nav {
     display: none;
+  }
+  .subscribe-form {
+    flex-direction: column;
+  }
+  .subscribe-form input[type="submit"] {
+    border-left: 1px solid var(--link);
   }
 }
