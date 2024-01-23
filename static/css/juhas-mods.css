@@ -131,16 +131,17 @@ nav a:hover, a.conversation-on-mb:hover, a.reply-on-mastodon:hover, a.reply-by-e
 }
 
 nav.site-nav .seuraa-blogia {
-  background: var(--link);
+  background-color: var(--link);
   color: var(--button-text);
   border: 1px solid transparent;
-  opacity: 0.8;
+  opacity: 0.9;
 }
 nav.site-nav .seuraa-blogia:hover {
-  background: var(--link);
+  background-color: var(--link);
   color: var(--button-text);
   border: 1px solid transparent;
   opacity: 1;
+  transition: background-color 1s;
 }
 
 .site-nav ul {
@@ -279,6 +280,18 @@ article .p-summary a:visited, article .post-content a:visited, .post a:visited {
 
 .subscribe-form {
   margin-bottom: 2rem;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+.subscribe-form input[type="text"], .subscribe-form input[type="submit"] {
+  margin: 0;
+  border-radius: 0;
+}
+
+.subscribe-form input[type="submit"] {
+  border-left: 0;
 }
 
 footer {
