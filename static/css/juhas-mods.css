@@ -35,7 +35,7 @@
 	--bg-color: #f5f4f2;
   --bg-color-var: #f4e6da;
   --border-color: #ccc;
-	--font-stack-mono: "iA Writer Mono", monospace;
+	--font-stack-mono: "iA Writer Mono", "Geist Mono", monospace;
   --font-stack-sans: "Avenir Next", Avenir, "-apple-system", BlinkMacSystemFont, "helvetica neue", Helvetica, Arial, sans-serif;
 	--font-stack-titles: Cartridge, var(--font-stack-sans);
 }
@@ -63,7 +63,7 @@
 }
 
 body {
-  background: #f5f4f2 url(https://images.unsplash.com/photo-1705714135183-dbe57919b735?q=80&w=2100&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D) repeat top left fixed;
+  background: #f5f4f2 url(https://images.unsplash.com/photo-1705714135183-dbe57919b735?q=80&w=2100&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D) no-repeat center center fixed;
   font-family: 'Avenir Next';
   background-size: cover;
   max-width: 48em;
@@ -306,7 +306,7 @@ header p {
   body {
     padding: 0 0em;
     background-image: none;
-    background: var(--bg-color-var) url(https://images.unsplash.com/photo-1705714135183-dbe57919b735?q=80&w=700&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D) no-repeat;
+    background: var(--bg-color-var) url(https://images.unsplash.com/photo-1736627767464-0b49b52ce699?q=80&w=1400&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D) no-repeat center center fixed;
   }
   .page-content, .site-header {
     padding: 2rem 1rem 0rem 1rem;
