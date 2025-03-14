@@ -307,7 +307,6 @@ header p {
 
 .stories {
   display: flex;
-  display: none;
   gap: 1rem;
   margin-top: 1rem;
 }
