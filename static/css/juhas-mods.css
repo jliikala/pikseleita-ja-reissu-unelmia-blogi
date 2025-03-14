@@ -301,6 +301,10 @@ header p {
   margin-top: 1rem;
 }
 
+.stories {
+  display: none;
+}
+
 .story-thumbnail {
   width: 80px;
   height: 80px;
