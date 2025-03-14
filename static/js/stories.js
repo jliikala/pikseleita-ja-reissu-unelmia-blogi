@@ -73,17 +73,42 @@ function showStory(story) {
   `;
   document.body.appendChild(overlay);
 
+  const video = document.getElementById("story-video");
+
+  // Try entering fullscreen when the video is loaded
+  video.addEventListener("loadedmetadata", () => {
+      enterFullscreen(video);
+  });
+
   document.addEventListener("keydown", handleKeyEvents);
-  addSwipeListeners(); // Add touch swipe detection
+  addSwipeListeners();
 
   markStoryAsSeen(story.id);
 }
 
+function enterFullscreen(element) {
+  if (element.requestFullscreen) {
+      element.requestFullscreen();
+  } else if (element.mozRequestFullScreen) { // Firefox
+      element.mozRequestFullScreen();
+  } else if (element.webkitRequestFullscreen) { // Safari
+      element.webkitRequestFullscreen();
+  } else if (element.msRequestFullscreen) { // IE/Edge
+      element.msRequestFullscreen();
+  }
+}
+
+// Ensure fullscreen exits when closing the story
 function closeStory() {
   const overlay = document.getElementById("story-overlay");
   if (overlay) overlay.remove();
+
+  if (document.fullscreenElement) {
+      document.exitFullscreen();
+  }
+
   document.removeEventListener("keydown", handleKeyEvents);
-  removeSwipeListeners(); // Remove touch swipe detection
+  removeSwipeListeners();
 }
 
 function nextStory() {
