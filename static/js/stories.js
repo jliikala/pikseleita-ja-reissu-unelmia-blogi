@@ -12,12 +12,17 @@ document.addEventListener("DOMContentLoaded", async function () {
 
       const collectionElement = document.createElement('div');
       collectionElement.classList.add("story-item");
+
       collectionElement.innerHTML = `
-          <img src="${collection.image}"
-               alt="${collection.title}"
-               class="story-thumbnail ${isSeen ? 'seen' : 'new'}"
-               onclick="openStoryCollection('${collection.id}')">
+          <div class="story-circle">
+              <img src="${collection.image}"
+                   alt="${collection.title}"
+                   class="story-thumbnail ${isSeen ? 'seen' : 'new'}"
+                   onclick="openStoryCollection('${collection.id}')">
+              <p class="story-title">${collection.title}</p>
+          </div>
       `;
+
       container.appendChild(collectionElement);
   });
 });

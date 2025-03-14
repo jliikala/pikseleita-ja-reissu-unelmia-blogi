@@ -301,8 +301,29 @@ header p {
   margin-top: 1rem;
 }
 
+#stories-container {
+  display: flex;
+  gap: 15px;
+}
+
 .stories {
+  display: flex;
   display: none;
+  gap: 1rem;
+  margin-top: 1rem;
+}
+
+.story-item {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  text-align: center;
+}
+
+.story-circle {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 .story-thumbnail {
@@ -315,14 +336,22 @@ header p {
 
 /* New collection (unseen stories) */
 .story-thumbnail.new {
-  border: 3px solid #ff4500; /* Bright border for new stories */
+  border: 3px solid #ff4500;
   padding: 2px;
 }
 
 /* Seen collection (all stories watched) */
 .story-thumbnail.seen {
-  border: 3px solid #ccc; /* Grey border for seen stories */
+  border: 3px solid #ccc;
   padding: 2px;
+}
+
+/* Story title below the circle */
+.story-title {
+  margin-top: 5px;
+  font-size: 14px;
+  font-weight: bold;
+  color: #fff;
 }
 
 /* Story modal */
