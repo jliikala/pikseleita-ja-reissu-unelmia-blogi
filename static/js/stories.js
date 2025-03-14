@@ -27,15 +27,69 @@ document.addEventListener("DOMContentLoaded", async function () {
   });
 });
 
+let currentCollection = null;
+let currentStoryIndex = 0;
+
 function openStoryCollection(collectionId) {
   fetch('/stories.json')
       .then(response => response.json())
       .then(collections => {
           const collection = collections.find(c => c.id === collectionId);
-          if (collection) {
-              playStoriesSequentially(collection.stories);
-          }
+          if (!collection) return;
+
+          currentCollection = collection;
+          currentStoryIndex = 0;
+          showStory(collection.stories[currentStoryIndex]);
       });
+}
+
+function showStory(story) {
+  const overlay = document.createElement('div');
+  overlay.id = 'story-overlay';
+  overlay.innerHTML = `
+      <div id="story-content">
+          <video id="story-video" src="${story.url}" autoplay controls></video>
+          <button id="prev-story" onclick="prevStory()">◀</button>
+          <button id="next-story" onclick="nextStory()">▶</button>
+          <button id="close-story" onclick="closeStory()">✖</button>
+      </div>
+  `;
+  document.body.appendChild(overlay);
+
+  document.addEventListener("keydown", handleKeyEvents);
+}
+
+function closeStory() {
+  const overlay = document.getElementById("story-overlay");
+  if (overlay) overlay.remove();
+  document.removeEventListener("keydown", handleKeyEvents);
+}
+
+function nextStory() {
+  if (!currentCollection || currentStoryIndex >= currentCollection.stories.length - 1) {
+      closeStory();
+      return;
+  }
+  currentStoryIndex++;
+  updateStory();
+}
+
+function prevStory() {
+  if (!currentCollection || currentStoryIndex <= 0) return;
+  currentStoryIndex--;
+  updateStory();
+}
+
+function updateStory() {
+  const video = document.getElementById("story-video");
+  video.src = currentCollection.stories[currentStoryIndex].url;
+  video.play();
+}
+
+function handleKeyEvents(event) {
+  if (event.key === "Escape") closeStory();
+  if (event.key === "ArrowRight") nextStory();
+  if (event.key === "ArrowLeft") prevStory();
 }
 
 function playStoriesSequentially(stories, index = 0) {

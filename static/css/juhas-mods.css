@@ -371,6 +371,45 @@ header p {
   max-height: 90%;
 }
 
+#story-overlay {
+  position: fixed;
+  top: 0; left: 0;
+  width: 100vw; height: 100vh;
+  background: rgba(0, 0, 0, 0.8);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+#story-content {
+  position: relative;
+  max-width: 90%;
+  max-height: 90%;
+}
+
+#story-video {
+  width: 100%;
+  height: auto;
+}
+
+#prev-story, #next-story, #close-story {
+  position: absolute;
+  top: 50%;
+  background: rgba(255, 255, 255, 0.6);
+  border: none;
+  padding: 10px;
+  font-size: 20px;
+  cursor: pointer;
+  border-radius: 50%;
+}
+
+#prev-story { left: 10px; }
+#next-story { right: 10px; }
+#close-story {
+  top: 10px; right: 10px;
+  font-size: 25px;
+}
+
 @media screen and (max-width: 700px) {
 
   body {
