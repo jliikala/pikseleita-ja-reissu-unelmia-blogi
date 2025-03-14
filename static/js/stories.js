@@ -44,6 +44,11 @@ function openStoryCollection(collectionId) {
 }
 
 function showStory(story) {
+  if (!story || !story.url) {
+      console.error("Invalid story object:", story);
+      return;
+  }
+
   const overlay = document.createElement('div');
   overlay.id = 'story-overlay';
   overlay.innerHTML = `
@@ -82,6 +87,10 @@ function prevStory() {
 
 function updateStory() {
   const video = document.getElementById("story-video");
+  if (!video || !currentCollection.stories[currentStoryIndex]) {
+      console.error("No video or story available at index:", currentStoryIndex);
+      return;
+  }
   video.src = currentCollection.stories[currentStoryIndex].url;
   video.play();
 }
@@ -99,10 +108,15 @@ function playStoriesSequentially(stories, index = 0) {
   }
 
   const story = stories[index];
+  if (!story || !story.url) {
+      console.error("Invalid story object:", story);
+      return;
+  }
+
   const modal = document.createElement('div');
   modal.innerHTML = `
       <div class="story-modal">
-          <video src="${story.video}" autoplay controls></video>
+          <video src="${story.url}" autoplay controls></video>
       </div>
   `;
   document.body.appendChild(modal);
@@ -140,8 +154,4 @@ function updateStoryStyles() {
               });
           });
       });
-}
-
-function closeStory() {
-  document.querySelector('.story-modal')?.remove();
 }
