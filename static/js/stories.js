@@ -66,9 +66,9 @@ function showStory(story) {
   overlay.innerHTML = `
       <div id="story-content">
           <video id="story-video" src="${story.video}" autoplay controls></video>
-          <button id="prev-story" onclick="prevStory()">◀</button>
-          <button id="next-story" onclick="nextStory()">▶</button>
-          <button id="close-story" onclick="closeStory()">✖</button>
+          <button id="prev-story" class="story-nav-button">◀</button>
+          <button id="next-story" class="story-nav-button">▶</button>
+          <button id="close-story" class="story-nav-button close-btn">✖</button>
       </div>
   `;
   document.body.appendChild(overlay);
@@ -80,22 +80,37 @@ function showStory(story) {
       enterFullscreen(video);
   });
 
+  // Event listeners
+  document.getElementById("prev-story").addEventListener("click", prevStory);
+  document.getElementById("next-story").addEventListener("click", nextStory);
+  document.getElementById("close-story").addEventListener("click", closeStory);
+
   document.addEventListener("keydown", handleKeyEvents);
   addSwipeListeners();
 
   markStoryAsSeen(story.id);
 }
 
+// Ensure buttons are always visible even in fullscreen
 function enterFullscreen(element) {
   if (element.requestFullscreen) {
-      element.requestFullscreen();
+      element.requestFullscreen().then(() => showNavigationUI());
   } else if (element.mozRequestFullScreen) { // Firefox
       element.mozRequestFullScreen();
+      showNavigationUI();
   } else if (element.webkitRequestFullscreen) { // Safari
       element.webkitRequestFullscreen();
+      showNavigationUI();
   } else if (element.msRequestFullscreen) { // IE/Edge
       element.msRequestFullscreen();
+      showNavigationUI();
   }
+}
+
+function showNavigationUI() {
+  document.querySelectorAll(".story-nav-button").forEach(button => {
+      button.style.display = "block";
+  });
 }
 
 // Ensure fullscreen exits when closing the story
@@ -197,16 +212,36 @@ function handleTouchEnd() {
     }
 }
 
+// Handle swipe gestures for mobile
 function addSwipeListeners() {
-    const overlay = document.getElementById("story-overlay");
-    overlay.addEventListener("touchstart", handleTouchStart, false);
-    overlay.addEventListener("touchmove", handleTouchMove, false);
-    overlay.addEventListener("touchend", handleTouchEnd, false);
+  let touchStartX = 0;
+  let touchEndX = 0;
+
+  function handleTouchStart(event) {
+      touchStartX = event.touches[0].clientX;
+  }
+
+  function handleTouchEnd(event) {
+      touchEndX = event.changedTouches[0].clientX;
+      handleSwipeGesture();
+  }
+
+  function handleSwipeGesture() {
+      const swipeThreshold = 50; // Minimum swipe distance
+      if (touchEndX < touchStartX - swipeThreshold) {
+          nextStory(); // Swipe left → Next story
+      }
+      if (touchEndX > touchStartX + swipeThreshold) {
+          prevStory(); // Swipe right → Previous story
+      }
+  }
+
+  document.addEventListener("touchstart", handleTouchStart);
+  document.addEventListener("touchend", handleTouchEnd);
 }
 
+// Remove swipe listeners when closing story
 function removeSwipeListeners() {
-    const overlay = document.getElementById("story-overlay");
-    overlay.removeEventListener("touchstart", handleTouchStart, false);
-    overlay.removeEventListener("touchmove", handleTouchMove, false);
-    overlay.removeEventListener("touchend", handleTouchEnd, false);
+  document.removeEventListener("touchstart", handleTouchStart);
+  document.removeEventListener("touchend", handleTouchEnd);
 }
