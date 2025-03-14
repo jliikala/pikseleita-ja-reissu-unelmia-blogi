@@ -21,7 +21,10 @@
 		</ul>
 		</nav>
 	</div>
-	<p class="description">{{ .Site.Data.site.description }}</p>
+	<div class="description">
+		<p>I'm <strong>Juha Liikala</strong>, a web maker, photographer and frequent wanderer at <a href="{{ .Site.Data.author.instagram_url }}">Nomad Couch</a>.</p>
+		<p>This site is for people who build <em>cool stuff on the internet</em>. More spesifically, for those who <strong>building a thriving online business</strong> can help you accomplish that and more. Read more <a href="/about/">about me</a> and this site, <a href="mailto:hi@juhaliikala.com">say hello</a> or <a href="{{ .Site.Data.author.threads_url }}"></a>follow me on Threads.</p>
+	</p>
 	<div class="header-nav">
 		<nav class="site-nav">
 			<ul>
@@ -35,5 +38,8 @@
 			</ul>
 		</nav>
 		{{ partial "social-links.html" . }}
+		<div class="stories">
+			<span class="">Coming soon.</span>
+		</div>
 	</div>
 </header>

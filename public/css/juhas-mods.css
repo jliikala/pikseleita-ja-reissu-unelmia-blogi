@@ -297,10 +297,6 @@ footer {
   border-top: 1px dashed var(--border-color)
 }
 
-.stories {
-  display: none;
-}
-
 header p {
   margin-top: 1rem;
 }
