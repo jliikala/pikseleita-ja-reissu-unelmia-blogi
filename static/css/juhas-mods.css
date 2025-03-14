@@ -305,11 +305,6 @@ header p {
   margin-top: 1rem;
 }
 
-#stories-container {
-  display: flex;
-  gap: 15px;
-}
-
 .stories {
   display: flex;
   display: none;
