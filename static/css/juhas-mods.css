@@ -60,6 +60,10 @@
   .avatar-light {
     display: none;
   }
+
+  .story-title {
+    color: var(--text);
+  }
 }
 
 body {
@@ -351,7 +355,7 @@ header p {
   margin-top: 5px;
   font-size: 14px;
   font-weight: bold;
-  color: #fff;
+  color: var(--text);
 }
 
 /* Story modal */
