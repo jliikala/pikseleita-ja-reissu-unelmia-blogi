@@ -297,12 +297,29 @@ footer {
   border-top: 1px dashed var(--border-color)
 }
 
+header p {
+  margin-top: 1rem;
+}
+
 .stories {
   display: none;
 }
 
-header p {
-  margin-top: 1rem;
+.story-thumbnail {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  cursor: pointer;
+}
+.story-modal {
+  position: fixed;
+  top: 0; left: 0; width: 100%; height: 100%;
+  background: rgba(0, 0, 0, 0.8);
+  display: flex; justify-content: center; align-items: center;
+}
+.story-modal video {
+  max-width: 80%;
+  max-height: 80%;
 }
 
 @media screen and (max-width: 700px) {

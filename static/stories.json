@@ -1,0 +1,16 @@
+[
+  {
+    "id": 1,
+    "title": "Studio",
+    "image": "studio-thumbnail.jpg",
+    "video": "studio-story.mp4",
+    "timestamp": "2025-03-10T12:00:00Z"
+  },
+  {
+    "id": 2,
+    "title": "Bali",
+    "image": "bali-thumbnail.jpg",
+    "video": "bali-story.mp4",
+    "timestamp": "2025-03-08T15:30:00Z"
+  }
+]
