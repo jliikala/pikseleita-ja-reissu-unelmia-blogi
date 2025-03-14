@@ -1,16 +1,22 @@
 [
   {
-    "id": 1,
-    "title": "Studio",
-    "image": "studio-thumbnail.jpg",
-    "video": "https://www.sample-videos.com/video321/mp4/720/big_buck_bunny_720p_5mb.mp4",
-    "timestamp": "2025-03-10T12:00:00Z"
+    "id": "winter_fun",
+    "title": "Winter Fun",
+    "stories": [
+      { "id": "story3", "video": "https://www.sample-videos.com/video321/mp4/720/big_buck_bunny_720p_5mb.mp4" },
+      { "id": "story2", "video": "https://test-videos.co.uk/vids/bigbuckbunny/mp4/h264/720/Big_Buck_Bunny_720_10s_2MB.mp4" },
+      { "id": "story1", "video": "https://download.samplelib.com/mp4/sample-15s.mp4" }
+    ],
+    "image": "/images/AvatarDarkTwo.png"
   },
   {
-    "id": 2,
-    "title": "Bali",
-    "image": "bali-thumbnail.jpg",
-    "video": "bali-story.mp4",
-    "timestamp": "2025-03-08T15:30:00Z"
+    "id": "bali_trip",
+    "title": "Bali Trip",
+    "stories": [
+      { "id": "story6", "video": "https://www.sample-videos.com/video321/mp4/720/big_buck_bunny_720p_5mb.mp4" },
+      { "id": "story5", "video": "https://test-videos.co.uk/vids/bigbuckbunny/mp4/h264/720/Big_Buck_Bunny_720_10s_2MB.mp4" },
+      { "id": "story4", "video": "https://download.samplelib.com/mp4/sample-15s.mp4" }
+    ],
+    "image": "/images/AvatarDarkOne.png"
   }
 ]
