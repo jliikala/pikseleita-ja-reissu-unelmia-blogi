@@ -1,30 +1,37 @@
 document.addEventListener("DOMContentLoaded", async function () {
-  const response = await fetch('/stories.json');
-  const collections = await response.json();
-  const container = document.getElementById('stories-container');
+  try {
+    const response = await fetch('/stories.json');
+    if (!response.ok) throw new Error("Failed to load stories.json");
 
-  if (!container) return;
+    const collections = await response.json();
+    console.log("Fetched JSON data:", collections); // Debugging
 
-  const seenStories = JSON.parse(localStorage.getItem("seenStories")) || [];
+    const container = document.getElementById('stories-container');
+    if (!container) return;
 
-  collections.forEach(collection => {
-      const isSeen = collection.stories.every(story => seenStories.includes(story.id));
+    const seenStories = JSON.parse(localStorage.getItem("seenStories")) || [];
 
-      const collectionElement = document.createElement('div');
-      collectionElement.classList.add("story-item");
+    collections.forEach(collection => {
+        const isSeen = collection.stories.every(story => seenStories.includes(story.id));
 
-      collectionElement.innerHTML = `
-          <div class="story-circle">
-              <img src="${collection.image}"
-                   alt="${collection.title}"
-                   class="story-thumbnail ${isSeen ? 'seen' : 'new'}"
-                   onclick="openStoryCollection('${collection.id}')">
-              <p class="story-title">${collection.title}</p>
-          </div>
-      `;
+        const collectionElement = document.createElement('div');
+        collectionElement.classList.add("story-item");
 
-      container.appendChild(collectionElement);
-  });
+        collectionElement.innerHTML = `
+            <div class="story-circle">
+                <img src="${collection.image}"
+                     alt="${collection.title}"
+                     class="story-thumbnail ${isSeen ? 'seen' : 'new'}"
+                     onclick="openStoryCollection('${collection.id}')">
+                <p class="story-title">${collection.title}</p>
+            </div>
+        `;
+
+        container.appendChild(collectionElement);
+    });
+  } catch (error) {
+    console.error("Error loading stories:", error);
+  }
 });
 
 let currentCollection = null;
@@ -32,28 +39,33 @@ let currentStoryIndex = 0;
 
 function openStoryCollection(collectionId) {
   fetch('/stories.json')
-      .then(response => response.json())
+      .then(response => {
+          if (!response.ok) throw new Error("Failed to load stories.json");
+          return response.json();
+      })
       .then(collections => {
+          console.log("Fetching collection:", collectionId);
+          console.log("Available collections:", collections);
+
           const collection = collections.find(c => c.id === collectionId);
-          if (!collection) return;
+          if (!collection) {
+              console.error("Collection not found:", collectionId);
+              return;
+          }
 
           currentCollection = collection;
           currentStoryIndex = 0;
           showStory(collection.stories[currentStoryIndex]);
-      });
+      })
+      .catch(error => console.error("Error opening story collection:", error));
 }
 
 function showStory(story) {
-  if (!story || !story.url) {
-      console.error("Invalid story object:", story);
-      return;
-  }
-
   const overlay = document.createElement('div');
   overlay.id = 'story-overlay';
   overlay.innerHTML = `
       <div id="story-content">
-          <video id="story-video" src="${story.url}" autoplay controls></video>
+          <video id="story-video" src="${story.video}" autoplay controls></video>
           <button id="prev-story" onclick="prevStory()">◀</button>
           <button id="next-story" onclick="nextStory()">▶</button>
           <button id="close-story" onclick="closeStory()">✖</button>
@@ -62,6 +74,8 @@ function showStory(story) {
   document.body.appendChild(overlay);
 
   document.addEventListener("keydown", handleKeyEvents);
+
+  markStoryAsSeen(story.id);
 }
 
 function closeStory() {
@@ -87,12 +101,13 @@ function prevStory() {
 
 function updateStory() {
   const video = document.getElementById("story-video");
-  if (!video || !currentCollection.stories[currentStoryIndex]) {
-      console.error("No video or story available at index:", currentStoryIndex);
-      return;
-  }
-  video.src = currentCollection.stories[currentStoryIndex].url;
+  if (!video) return;
+
+  const story = currentCollection.stories[currentStoryIndex];
+  video.src = story.video;
   video.play();
+
+  markStoryAsSeen(story.id);
 }
 
 function handleKeyEvents(event) {
@@ -101,47 +116,21 @@ function handleKeyEvents(event) {
   if (event.key === "ArrowLeft") prevStory();
 }
 
-function playStoriesSequentially(stories, index = 0) {
-  if (index >= stories.length) {
-      closeStory(); // Close modal when all stories are played
-      return;
-  }
-
-  const story = stories[index];
-  if (!story || !story.url) {
-      console.error("Invalid story object:", story);
-      return;
-  }
-
-  const modal = document.createElement('div');
-  modal.innerHTML = `
-      <div class="story-modal">
-          <video src="${story.url}" autoplay controls></video>
-      </div>
-  `;
-  document.body.appendChild(modal);
-
-  // Mark story as seen
+function markStoryAsSeen(storyId) {
   let seenStories = JSON.parse(localStorage.getItem("seenStories")) || [];
-  if (!seenStories.includes(story.id)) {
-      seenStories.push(story.id);
+  if (!seenStories.includes(storyId)) {
+      seenStories.push(storyId);
       localStorage.setItem("seenStories", JSON.stringify(seenStories));
   }
-
-  // Update story thumbnail styles
   updateStoryStyles();
-
-  // Move to the next story when the video ends
-  const video = modal.querySelector("video");
-  video.onended = () => {
-      modal.remove();
-      playStoriesSequentially(stories, index + 1);
-  };
 }
 
 function updateStoryStyles() {
   fetch('/stories.json')
-      .then(response => response.json())
+      .then(response => {
+          if (!response.ok) throw new Error("Failed to load stories.json");
+          return response.json();
+      })
       .then(collections => {
           const seenStories = JSON.parse(localStorage.getItem("seenStories")) || [];
           collections.forEach(collection => {
@@ -153,5 +142,6 @@ function updateStoryStyles() {
                   }
               });
           });
-      });
+      })
+      .catch(error => console.error("Error updating story styles:", error));
 }
