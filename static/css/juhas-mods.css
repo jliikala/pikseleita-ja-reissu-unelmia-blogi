@@ -130,13 +130,13 @@ nav a:hover, a.conversation-on-mb:hover, a.reply-on-mastodon:hover, a.reply-by-e
   color: var(--bg-color);
 }
 
-nav.site-nav .seuraa-blogia {
+nav.site-nav .follow-along {
   background-color: var(--link);
   color: var(--button-text);
   border: 1px solid transparent;
   opacity: 0.9;
 }
-nav.site-nav .seuraa-blogia:hover {
+nav.site-nav .follow-along:hover {
   background-color: var(--link);
   color: var(--button-text);
   border: 1px solid transparent;
