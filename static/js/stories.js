@@ -74,6 +74,7 @@ function showStory(story) {
   document.body.appendChild(overlay);
 
   document.addEventListener("keydown", handleKeyEvents);
+  addSwipeListeners(); // Add touch swipe detection
 
   markStoryAsSeen(story.id);
 }
@@ -82,6 +83,7 @@ function closeStory() {
   const overlay = document.getElementById("story-overlay");
   if (overlay) overlay.remove();
   document.removeEventListener("keydown", handleKeyEvents);
+  removeSwipeListeners(); // Remove touch swipe detection
 }
 
 function nextStory() {
@@ -144,4 +146,42 @@ function updateStoryStyles() {
           });
       })
       .catch(error => console.error("Error updating story styles:", error));
+}
+
+/* ====================== */
+/* 🔥 SWIPE GESTURE LOGIC */
+/* ====================== */
+let touchStartX = 0;
+let touchEndX = 0;
+
+function handleTouchStart(event) {
+    touchStartX = event.touches[0].clientX;
+}
+
+function handleTouchMove(event) {
+    touchEndX = event.touches[0].clientX;
+}
+
+function handleTouchEnd() {
+    const swipeDistance = touchStartX - touchEndX;
+
+    if (swipeDistance > 50) {
+        nextStory(); // Swipe left → Next story
+    } else if (swipeDistance < -50) {
+        prevStory(); // Swipe right → Previous story
+    }
+}
+
+function addSwipeListeners() {
+    const overlay = document.getElementById("story-overlay");
+    overlay.addEventListener("touchstart", handleTouchStart, false);
+    overlay.addEventListener("touchmove", handleTouchMove, false);
+    overlay.addEventListener("touchend", handleTouchEnd, false);
+}
+
+function removeSwipeListeners() {
+    const overlay = document.getElementById("story-overlay");
+    overlay.removeEventListener("touchstart", handleTouchStart, false);
+    overlay.removeEventListener("touchmove", handleTouchMove, false);
+    overlay.removeEventListener("touchend", handleTouchEnd, false);
 }
