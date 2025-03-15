@@ -44,8 +44,9 @@
   <link rel="stylesheet" href="{{ "css/main.css" | relURL }}?{{ .Site.Params.theme_seconds }}">
   <link rel="stylesheet" href="{{ "css/juhas-mods.css" | relURL }}?{{ .Site.Params.theme_seconds }}">
   {{ if .IsHome }}
-  <link rel="stylesheet" href="{{ "css/zuck.min.css" | relURL }}?{{ .Site.Params.theme_seconds }}">
-  <script src="{{ "js/zuck.min.js" | relURL }}"></script>
+  <link rel="stylesheet" href="https://unpkg.com/zuck.js/dist/zuck.css" />
+  <link rel="stylesheet" href="https://unpkg.com/zuck.js/dist/skins/snapgram.css" />
+  <script src="https://unpkg.com/zuck.js/dist/zuck.js"></script>
   <script src="{{ "js/stories.js" | relURL }}"></script>
   {{ end }}
   {{ partial "microblog_head.html" . }}
