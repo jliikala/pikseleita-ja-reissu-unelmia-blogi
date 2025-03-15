@@ -63,26 +63,34 @@ function openStoryCollection(collectionId) {
 function showStory(story) {
   const overlay = document.createElement("div");
   overlay.id = "story-overlay";
+
+  let content;
+  if (story.video) {
+      content = `<video id="story-video" src="${story.video}" autoplay controls playsinline></video>`;
+  } else if (story.image) {
+      content = `<img id="story-image" src="${story.image}" alt="Story Image">`;
+  }
+
   overlay.innerHTML = `
       <div id="story-content">
-          <video id="story-video" src="${story.video}" autoplay controls playsinline></video>
+          ${content}
+          <button id="prev-story" onclick="prevStory()">◀</button>
+          <button id="next-story" onclick="nextStory()">▶</button>
+          <button id="close-story" onclick="closeStory()">✖</button>
       </div>
   `;
+
   document.body.appendChild(overlay);
 
-  const video = document.getElementById("story-video");
+  if (story.video) {
+      const video = document.getElementById("story-video");
+      video.addEventListener("loadedmetadata", () => {
+          enterFullscreen(video);
+      });
+      video.addEventListener("ended", nextStory);
+  }
 
-  // iOS-specific: Ensure fullscreen works properly
-  video.addEventListener("loadedmetadata", () => {
-      enterFullscreen(video);
-  });
-
-  // Move to the next story when video ends
-  video.addEventListener("ended", nextStory);
-
-  // Swipe gestures for touch devices
   addSwipeListeners();
-
   markStoryAsSeen(story.id);
 }
 
@@ -133,12 +141,18 @@ function prevStory() {
 }
 
 function updateStory() {
-  const video = document.getElementById("story-video");
-  if (!video) return;
-
   const story = currentCollection.stories[currentStoryIndex];
-  video.src = story.video;
-  video.play();
+
+  const contentContainer = document.getElementById("story-content");
+  if (!contentContainer) return;
+
+  if (story.video) {
+      contentContainer.innerHTML = `<video id="story-video" src="${story.video}" autoplay controls playsinline></video>`;
+      const video = document.getElementById("story-video");
+      video.addEventListener("ended", nextStory);
+  } else if (story.image) {
+      contentContainer.innerHTML = `<img id="story-image" src="${story.image}" alt="Story Image">`;
+  }
 
   markStoryAsSeen(story.id);
 }
