@@ -311,6 +311,10 @@ header p {
   margin-top: 1rem;
 }
 
+#stories-container {
+  display: none !important
+}
+
 .story-item {
   display: flex;
   flex-direction: column;
