@@ -1,7 +1,7 @@
 [
   {
     "id": "winter_fun",
-    "title": "Winter Fun",
+    "title": "YouTube Playlists",
     "image": "/images/stories/cyberpunk-playlist.webp",
     "stories": [
       {
@@ -22,7 +22,7 @@
   },
   {
     "id": "travel_shots",
-    "title": "Travels",
+    "title": "Shots from Travels",
     "image": "/images/AvatarDarkOne.png",
     "stories": [
       {
