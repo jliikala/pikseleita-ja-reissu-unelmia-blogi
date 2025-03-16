@@ -5,17 +5,24 @@
     "image": "/images/stories/cyberpunk-playlist.webp",
     "stories": [
       {
+        "id": "story3",
+        "type": "video",
+        "source": "youtube",
+        "href": "https://www.youtube.com/watch?v=SvvzybYK0L4",
+        "width": 900
+      },
+      {
         "id": "story2",
         "type": "video",
         "source": "youtube",
-        "href": "https://www.youtube.com/watch?v=PEvK24Lozx4",
+        "href": "https://www.youtube.com/watch?v=rNYmQAvzvdM",
         "width": 900
       },
       {
         "id": "story1",
         "type": "video",
         "source": "youtube",
-        "href": "https://www.youtube.com/watch?v=r-bzpmnEoWk",
+        "href": "https://www.youtube.com/watch?v=PEvK24Lozx4",
         "width": 900
       }
     ]
