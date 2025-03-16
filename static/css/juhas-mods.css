@@ -63,13 +63,8 @@
   }
 
   a.follow-along {
-    background-color: #5428ec;
-    opacity: 0.9;
-    color: var(--text);
-  }
-
-  a.follow-along:hover {
-    opacity: 1;
+    background-color: #5428ec !important;
+    color: var(--text) !important;
   }
 }
 
@@ -147,7 +142,6 @@ a.follow-along {
   background-color: var(--link);
   color: var(--button-text);
   border: 1px solid transparent;
-  opacity: 0.9;
   position: absolute;
   border-radius: 5px;
   font-size: 0.9em;
@@ -159,7 +153,6 @@ a.follow-along:hover {
   background-color: var(--link);
   color: var(--button-text);
   border: 1px solid transparent;
-  opacity: 1;
   transition: background-color 1s;
 }
 
