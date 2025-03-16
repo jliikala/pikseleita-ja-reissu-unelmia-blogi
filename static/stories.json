@@ -28,34 +28,62 @@
     ]
   },
   {
-    "id": "travel_shots",
-    "title": "Shots from Travels",
-    "image": "/images/AvatarDarkOne.png",
+    "id": "winter_2025",
+    "title": "Winter 2025",
+    "image": "/images/stories/91FE07E7-1A87-4EB6-AFAF-0D274000EFA4.jpg",
     "stories": [
       {
-        "id": "story6",
+        "id": "story13",
+        "type": "video",
+        "source": "local",
+        "href": "/images/stories/1de4a0be5c8c4cbf81929995379a4a7b.mov"
+      },
+      {
+        "id": "story12",
         "type": "image",
-        "href": "https://images.unsplash.com/photo-1466513738646-a8a14efa476e?q=80&w=2048&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+        "href": "/images/stories/2FB03EB7-C694-4947-AE6F-9395D66E4A05.jpg"
+      },
+      {
+        "id": "story11",
+        "type": "image",
+        "href": "/images/stories/9DB74BDB-8D2A-473E-BABE-45A3A8E598BA.jpg"
+      },
+      {
+        "id": "story10",
+        "type": "video",
+        "source": "local",
+        "href": "/images/stories/22ea5000947e44c383348932ff030bd1.mov"
+      },
+      {
+        "id": "story9",
+        "type": "image",
+        "href": "/images/stories/70A6369B-3A7F-4BBC-9A83-FFCAADAD0ADF.jpg"
+      },
+      {
+        "id": "story8",
+        "type": "image",
+        "href": "/images/stories/91FE07E7-1A87-4EB6-AFAF-0D274000EFA4.jpg"
+      },
+      {
+        "id": "story7",
+        "type": "image",
+        "href": "/images/stories/2800C133-96FD-4753-B449-51D1300EF721.jpg"
       },
       {
         "id": "story6",
         "type": "image",
-        "href": "https://images.unsplash.com/photo-1466515415575-ffdd75efcb48?q=80&w=2574&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
-      },
-      {
-        "id": "story6",
-        "type": "image",
-        "href": "https://images.unsplash.com/photo-1466516834185-e1f06dd06efa?q=80&w=2574&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+        "href": "/images/stories/46612DB1-9572-40F5-B39C-9E51053A1572.jpg"
       },
       {
         "id": "story5",
         "type": "image",
-        "href": "https://images.unsplash.com/photo-1466516490129-669b27262650?q=80&w=2448&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+        "href": "/images/stories/CEC3DA67-C541-4C3F-AA75-790C28AA7FB2.jpg"
       },
       {
         "id": "story4",
-        "type": "image",
-        "href": "https://images.unsplash.com/photo-1466515562424-5c0e569369d8?q=80&w=2621&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+        "type": "video",
+        "source": "local",
+        "href": "/images/stories/bd086b52fad147ada4f742845e00a2e5.mov"
       }
     ]
   }
