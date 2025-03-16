@@ -61,6 +61,16 @@
   .story-title {
     color: var(--text);
   }
+
+  a.follow-along {
+    background-color: #5428ec;
+    opacity: 0.9;
+    color: var(--text);
+  }
+
+  a.follow-along:hover {
+    opacity: 1;
+  }
 }
 
 body {
