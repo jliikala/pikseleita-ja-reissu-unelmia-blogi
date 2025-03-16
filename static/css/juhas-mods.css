@@ -334,21 +334,29 @@ header p {
   margin-top: 1rem;
 }
 
-/* #stories-container {
-  display: none !important
-} */
+#stories-container {
+  display: flex;
+  gap: 10px; /* Space between circles */
+  overflow-x: auto; /* Enables horizontal scrolling */
+  white-space: nowrap;
+  padding: 10px 0; /* Add padding for better spacing */
+  scrollbar-width: none; /* Hides scrollbar in Firefox */
+}
 
 .story-item {
   display: flex;
   flex-direction: column;
   gap: 5px;
   text-align: center;
+  flex: 0 0 auto; /* Prevents items from shrinking */
 }
 
 .story-circle {
   display: flex;
   flex-direction: column;
   align-items: center;
+  justify-content: center;
+  overflow: hidden;
 }
 
 .story-thumbnail {
