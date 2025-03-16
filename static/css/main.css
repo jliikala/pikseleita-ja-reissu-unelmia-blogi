@@ -342,7 +342,7 @@ p > code, li > code, span.tinylytics_hits, span.tinylytics_uptime {
 
 mark {
 	background: var(--mark);
-	color: var();
+	color: var(--text);
 }
 
 .tiny-img {
