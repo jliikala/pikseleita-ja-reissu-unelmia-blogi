@@ -132,14 +132,19 @@ nav a:hover, a.conversation-on-mb:hover, a.reply-on-mastodon:hover, a.reply-by-e
 }
 
 .follow-along {
+  text-decoration: none;
+  padding: 5px 10px;
   background-color: var(--link);
   color: var(--button-text);
   border: 1px solid transparent;
   opacity: 0.9;
   position: absolute;
+  border-radius: 5px;
+  font-size: 0.9em;
   top: -20px;
   right: 20px;
 }
+
 .follow-along:hover {
   background-color: var(--link);
   color: var(--button-text);
