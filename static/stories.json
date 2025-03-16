@@ -4,21 +4,52 @@
     "title": "Winter Fun",
     "image": "/images/AvatarDarkTwo.png",
     "stories": [
-      { "id": "story5", "image": "https://images.unsplash.com/photo-1728588266992-a50e7adc55c2?q=80&w=2574&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" },
-      { "id": "story4", "image": "https://images.unsplash.com/photo-1735780688144-569871ce8381?q=80&w=2670&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" },
-      { "id": "story3", "video": "https://www.sample-videos.com/video321/mp4/720/big_buck_bunny_720p_5mb.mp4" },
-      { "id": "story2", "image": "https://example.com/image.jpg" },
-      { "id": "story1", "video": "https://download.samplelib.com/mp4/sample-15s.mp4" }
+      {
+        "id": "story2",
+        "type": "video",
+        "source": "youtube",
+        "href": "https://www.youtube.com/watch?v=PEvK24Lozx4",
+        "width": 900
+      },
+      {
+        "id": "story1",
+        "type": "video",
+        "source": "youtube",
+        "href": "https://www.youtube.com/watch?v=r-bzpmnEoWk",
+        "width": 900
+      }
     ]
   },
   {
-    "id": "bali_trip",
-    "title": "Bali Trip",
+    "id": "travel_shots",
+    "title": "Travels",
     "image": "/images/AvatarDarkOne.png",
     "stories": [
-      { "id": "story6", "video": "https://www.sample-videos.com/video321/mp4/720/big_buck_bunny_720p_5mb.mp4" },
-      { "id": "story5", "video": "https://test-videos.co.uk/vids/bigbuckbunny/mp4/h264/720/Big_Buck_Bunny_720_10s_2MB.mp4" },
-      { "id": "story4", "video": "https://download.samplelib.com/mp4/sample-15s.mp4" }
+      {
+        "id": "story6",
+        "type": "image",
+        "href": "https://images.unsplash.com/photo-1466513738646-a8a14efa476e?q=80&w=2048&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+      },
+      {
+        "id": "story6",
+        "type": "image",
+        "href": "https://images.unsplash.com/photo-1466515415575-ffdd75efcb48?q=80&w=2574&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+      },
+      {
+        "id": "story6",
+        "type": "image",
+        "href": "https://images.unsplash.com/photo-1466516834185-e1f06dd06efa?q=80&w=2574&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+      },
+      {
+        "id": "story5",
+        "type": "image",
+        "href": "https://images.unsplash.com/photo-1466516490129-669b27262650?q=80&w=2448&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+      },
+      {
+        "id": "story4",
+        "type": "image",
+        "href": "https://images.unsplash.com/photo-1466515562424-5c0e569369d8?q=80&w=2621&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+      }
     ]
   }
 ]

@@ -36,11 +36,12 @@ function openStoryCollection(collectionId) {
               console.error("Collection not found:", collectionId);
               return;
           }
+
           const lightboxItems = collection.stories.map(story => ({
-              href: story.video || story.image,
-              type: story.video ? 'video' : 'image',
-              source: story.video ? 'local' : '',
-              autoplayVideos: true
+              href: story.href,
+              type: story.type,
+              source: ["youtube", "vimeo", "local"].includes(story.source) ? story.source : undefined,
+              width: ["youtube", "vimeo"].includes(story.source) ? 900 : undefined
           }));
 
           const lightbox = GLightbox({
@@ -50,6 +51,7 @@ function openStoryCollection(collectionId) {
               closeEffect: 'fade',
               onOpen: () => markStoriesAsSeen(collection.stories.map(story => story.id))
           });
+
           lightbox.open();
       })
       .catch(error => console.error("Error opening story collection:", error));
