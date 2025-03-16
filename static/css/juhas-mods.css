@@ -131,7 +131,7 @@ nav a:hover, a.conversation-on-mb:hover, a.reply-on-mastodon:hover, a.reply-by-e
   color: var(--bg-color);
 }
 
-.follow-along {
+a.follow-along {
   text-decoration: none;
   padding: 5px 10px;
   background-color: var(--link);
@@ -145,7 +145,7 @@ nav a:hover, a.conversation-on-mb:hover, a.reply-on-mastodon:hover, a.reply-by-e
   right: 20px;
 }
 
-.follow-along:hover {
+a.follow-along:hover {
   background-color: var(--link);
   color: var(--button-text);
   border: 1px solid transparent;
