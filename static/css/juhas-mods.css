@@ -284,18 +284,35 @@ article .p-summary a:visited, article .post-content a:visited, .post a:visited {
 }
 
 .subscribe-form {
-  margin-bottom: 2rem;
   display: flex;
-  flex-direction: row;
+  flex-wrap: wrap;
+  gap: 8px;
+  max-width: 400px; /* Adjust width as needed */
+  margin: 0 auto;
 }
 
-.subscribe-form input[type="text"], .subscribe-form input[type="submit"] {
-  margin: 0;
-  border-radius: 0 !important;
+.subscribe-form input[type="email"] {
+  flex: 1;
+  min-width: 200px; /* Ensures it doesn’t shrink too much */
+  padding: 10px;
+  font-size: 16px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
 }
 
 .subscribe-form input[type="submit"] {
-  border-left: 0;
+  padding: 10px 16px;
+  font-size: 16px;
+  border: none;
+  background-color: #0073e6;
+  color: white;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+.subscribe-form input[type="submit"]:hover {
+  background-color: #005bb5;
 }
 
 footer {
@@ -443,10 +460,13 @@ header p {
   .page .site-title-with-links, .page .description, .page .header-nav {
     display: none;
   }
+
   .subscribe-form {
     flex-direction: column;
   }
+
+  .subscribe-form input[type="email"],
   .subscribe-form input[type="submit"] {
-    border-left: 1px solid var(--link);
+    width: 100%;
   }
 }
