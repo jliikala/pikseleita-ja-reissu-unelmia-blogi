@@ -36,7 +36,7 @@
         "id": "story13",
         "type": "video",
         "source": "local",
-        "href": "/images/stories/1de4a0be5c8c4cbf81929995379a4a7b.mov"
+        "href": "/images/stories/1de4a0be5c8c4cbf81929995379a4a7b.mp4"
       },
       {
         "id": "story12",
@@ -52,7 +52,7 @@
         "id": "story10",
         "type": "video",
         "source": "local",
-        "href": "/images/stories/22ea5000947e44c383348932ff030bd1.mov"
+        "href": "/images/stories/22ea5000947e44c383348932ff030bd1.mp4"
       },
       {
         "id": "story9",
@@ -83,7 +83,7 @@
         "id": "story4",
         "type": "video",
         "source": "local",
-        "href": "/images/stories/bd086b52fad147ada4f742845e00a2e5.mov"
+        "href": "/images/stories/bd086b52fad147ada4f742845e00a2e5.mp4"
       }
     ]
   }
