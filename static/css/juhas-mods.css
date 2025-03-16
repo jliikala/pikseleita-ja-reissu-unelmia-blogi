@@ -349,6 +349,7 @@ header p {
   gap: 5px;
   text-align: center;
   flex: 0 0 auto; /* Prevents items from shrinking */
+  cursor: pointer;
 }
 
 .story-circle {
@@ -363,7 +364,6 @@ header p {
   width: 80px;
   height: 80px;
   border-radius: 50%;
-  cursor: pointer;
   transition: border 0.3s;
 }
 
