@@ -2,7 +2,6 @@
 <div class="posts h-feed">
   <div class="post_list" role="main">
     {{ $posts := where .Site.Pages.ByDate.Reverse "Type" "post" }}
-    {{ $posts = where $posts "Params.categories" "intersect" (slice "Article") }}
     {{ $paginator := .Paginate $posts }}
     {{ range .Paginator.Pages }}
       {{ if .Title }}
