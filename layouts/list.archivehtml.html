@@ -9,7 +9,7 @@
 		</div>
 	{{ end }}
 
-	{{ $list := (where .Site.Pages "Type" "post") }}
+	{{ $list := (where .Site.RegularPages "Type" "post") }}
 	<div class="h-feed">
 		{{ range $list }}
 

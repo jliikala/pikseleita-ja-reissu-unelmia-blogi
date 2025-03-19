@@ -15,7 +15,7 @@
 {{ end }}
 <div class="full-archives h-feed">
 	<h3>Full feed</h3>
-	{{ $list := (where .Site.Pages "Type" "post") }}
+	{{ $list := (where .Site.RegularPages "Type" "post") }}
 	{{ range $list }}
 
 	<div class="h-entry">

@@ -1,8 +1,7 @@
 {{ define "main" }}
 <div class="posts h-feed">
   <div class="post_list" role="main">
-    {{ $posts := where .Site.Pages.ByDate.Reverse "Type" "post" }}
-    {{ $posts = where $posts "Params.categories" "intersect" (slice "Article") }}
+    {{ $posts := where .Site.RegularPages.ByDate.Reverse "Type" "post" }}
     {{ $paginator := .Paginate $posts }}
     {{ range .Paginator.Pages }}
       {{ if .Title }}
