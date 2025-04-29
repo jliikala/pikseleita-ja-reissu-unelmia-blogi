@@ -58,10 +58,6 @@
     display: none;
   }
 
-  .story-title {
-    color: var(--text);
-  }
-
   a.follow-along {
     background-color: #5428ec !important;
     color: var(--text) !important;
@@ -329,122 +325,6 @@ footer {
 
 header p {
   margin-top: 1rem;
-}
-
-.stories {
-  display: flex;
-  gap: 1rem;
-  margin-top: 1rem;
-}
-
-#stories-container {
-  display: flex;
-  gap: 10px; /* Space between circles */
-  overflow-x: auto; /* Enables horizontal scrolling */
-  white-space: nowrap;
-  padding: 10px 0; /* Add padding for better spacing */
-  scrollbar-width: none; /* Hides scrollbar in Firefox */
-}
-
-.story-item {
-  display: flex;
-  flex-direction: column;
-  gap: 5px;
-  text-align: center;
-  flex: 0 0 auto; /* Prevents items from shrinking */
-  cursor: pointer;
-}
-
-.story-circle {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  overflow: hidden;
-}
-
-.story-thumbnail {
-  width: 80px;
-  height: 80px;
-  border-radius: 50%;
-  transition: border 0.3s;
-}
-
-/* New collection (unseen stories) */
-.story-thumbnail.new {
-  border: 3px solid #ff4500;
-  padding: 2px;
-}
-
-/* Seen collection (all stories watched) */
-.story-thumbnail.seen {
-  border: 3px solid #ccc;
-  padding: 2px;
-}
-
-/* Story title below the circle */
-.story-title {
-  margin-top: 5px;
-  font-size: 14px;
-  font-weight: bold;
-  color: var(--text);
-}
-
-/* Story modal */
-.story-modal {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: rgba(0, 0, 0, 0.8);
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-.story-modal video {
-  max-width: 90%;
-  max-height: 90%;
-}
-
-#story-overlay {
-  position: fixed;
-  top: 0; left: 0;
-  width: 100vw; height: 100vh;
-  background: rgba(0, 0, 0, 0.8);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-#story-content {
-  position: relative;
-  max-width: 90%;
-  max-height: 90%;
-}
-
-#story-video {
-  width: 100%;
-  height: auto;
-}
-
-#prev-story, #next-story, #close-story {
-  position: absolute;
-  top: 50%;
-  background: rgba(255, 255, 255, 0.6);
-  border: none;
-  padding: 10px;
-  font-size: 20px;
-  cursor: pointer;
-  border-radius: 50%;
-}
-
-#prev-story { left: 10px; }
-#next-story { right: 10px; }
-#close-story {
-  top: 10px; right: 10px;
-  font-size: 25px;
 }
 
 @media screen and (max-width: 700px) {
