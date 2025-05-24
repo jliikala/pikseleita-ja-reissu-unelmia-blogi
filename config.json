@@ -1,7 +1,9 @@
 {
   "baseURL": "https://www.juhaliikala.com/",
   "title": "Juha Liikala",
-	"paginate": 20,
+	"pagination": {
+    "pagerSize": 20
+  },
   "params": {
     "dateForm": "02.01.2006"
   },
