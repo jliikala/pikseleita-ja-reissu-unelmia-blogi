@@ -1,39 +1,33 @@
 {{ define "main" }}
 <div class="posts h-feed">
-  <div class="post-list" role="main">
-    {{ $zero := time "0001-01-01T00:00:00Z" }}
-    {{ $posts := where (where .Site.RegularPages "Type" "post") ".Date" "gt" $zero | sort ".Date" "desc" }}
+  <div class="post_list" role="main">
+    {{ $posts := where .Site.RegularPages.ByDate.Reverse "Type" "post" }}
     {{ $paginator := .Paginate $posts }}
-    {{ range $paginator.Pages }}
-      <article class="post-preview h-entry {{ with .Params.categories }}{{ delimit (apply . "urlize" ".") " " | lower }}{{ end }}">
-        <a href="{{ .Permalink }}" class="post-date u-url" title="{{ .Title }}">
-          <time class="dt-published" datetime="{{ .Date.Format "2006-01-02T15:04:05Z07:00" }}">{{ .Date | time.Format ":date_long" }}</time> ∞
+    {{ range .Paginator.Pages }}
+      <article class="post-preview h-entry {{ range .Params.categories }} {{ . | urlize | lower }}{{ end }}">
+        <a href="{{ .Permalink }}" class="post-date u-url">
+          <time class="dt-published" datetime="{{ .Date.Format "02.01.2006 15:04:05 -0700" }}">{{ .Date | time.Format ":date_long" }}</time> ∞
         </a>
         {{ if .Title }}
           <h2 class="post-title p-name"><a href="{{ .Permalink }}">{{ .Title }}</a></h2>
         {{ end }}
         <div class="p-summary">
-          {{ with .Summary }}
-            {{ . | safeHTML }}
-          {{ else }}
-            {{ .Content | truncate 180 | safeHTML }}
-          {{ end }}
+          {{ .Summary | safeHTML }}
         </div>
       </article>
     {{ end }}
   </div>
 </div>
-
 <div class="post-nav">
-  {{ if $paginator.HasPrev }}
-    <span class="prev">
-      <a href="{{ $paginator.Prev.URL }}" title="Previous Page"><span class="arrow">← Newer Posts</span></a>
-    </span>
-  {{ end }}
-  {{ if $paginator.HasNext }}
-    <span class="next">
-      <a href="{{ $paginator.Next.URL }}"><span class="arrow">Older Posts →</span></a>
-    </span>
-  {{ end }}
+    {{ if $paginator.HasPrev }}
+      <span class="prev">
+        <a href="{{ $paginator.Prev.URL }}" title="Previous Page"><span class="arrow">← Newer Posts</span></a>
+      </span>
+    {{ end }}
+    {{ if $paginator.HasNext }}
+      <span class="next">
+        <a href="{{ $paginator.Next.URL }}"><span class="arrow">Older Posts →</span></a>
+      </span>
+    {{ end }}
 </div>
 {{ end }}

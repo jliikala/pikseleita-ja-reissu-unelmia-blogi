@@ -1,44 +1,44 @@
 {{ define "main" }}
 <div class="home h-feed">
+
   <ul class="post-list">
     {{ $paginator := .Paginate (where .Pages.ByDate.Reverse "Type" "post") }}
-    {{ range $paginator.Pages }}
-      <li class="post-preview h-entry {{ with .Params.categories }}{{ delimit (apply . "urlize" ".") " " | lower }}{{ end }}">
-        <a href="{{ .Permalink }}" class="post-date u-url" title="{{ .Title }}">
-          <time class="dt-published" datetime="{{ .Date.Format "2006-01-02T15:04:05Z07:00" }}">{{ .Date | time.Format ":date_long" }}</time> ∞
-        </a>
-
-        {{ if .Title }}
-          <h2 class="post-title p-name"><a href="{{ .Permalink }}">{{ .Title }}</a></h2>
+    {{ range .Paginator.Pages  }}
+    <div class="post-preview h-entry {{ range .Params.categories }} {{ . | urlize | lower }}{{ end }}">
+      <a href="{{ .Permalink }}" class="post-date u-url"><time class="dt-published" datetime="{{ .Date.Format "02.01.2006 15:04:05 -0700" }}">{{ .Date | time.Format ":date_long" }}</time> ∞</a>
+      {{ if .Title }}
+      <h2 class="post-title p-name"><a href="{{ .Permalink }}">{{ .Title }}</a></h2>
+      {{ if templates.Exists "partials/summary.html" }}
+      <div class="p-summary">
+        {{ .Summary | safeHTML }}
+        {{ if .Truncated }}
+        <p><a class="read-more" href="{{ .Permalink }}">{{ .Site.Params.read_more_text | safeHTML }}</a></p>
         {{ end }}
-
-        {{ if templates.Exists "partials/summary.html" }}
-          <div class="p-summary">
-            {{ .Summary | safeHTML }}
-            {{ if .Truncated }}
-              <p><a class="read-more" href="{{ .Permalink }}">{{ .Site.Params.read_more_text | safeHTML }}</a></p>
-            {{ end }}
-          </div>
-        {{ else }}
-          <div class="e-content">
-            {{ .Content }}
-          </div>
-        {{ end }}
-      </li>
+      </div>
+      {{ else }}
+      <div class="e-content">
+        {{ .Content }}
+      </div>
+      {{ end }}
+      {{ else }}
+      <div class="e-content">
+        {{ .Content }}
+      </div>
+      {{ end }}
+    </div>
     {{ end }}
   </ul>
 </div>
-
 <div class="post-nav">
   {{ if $paginator.HasPrev }}
-    <span class="prev">
-      <a href="{{ $paginator.Prev.URL }}" title="Previous Page"><span class="arrow">← Newer Posts</span></a>
-    </span>
+  <span class="prev">
+    <a href="{{ $paginator.Prev.URL }}" title="Previous Page"><span class="arrow">← Newer Posts</span></a>
+  </span>
   {{ end }}
   {{ if $paginator.HasNext }}
-    <span class="next">
-      <a href="{{ $paginator.Next.URL }}"><span class="arrow">Older Posts →</span></a>
-    </span>
+  <span class="next">
+    <a href="{{ $paginator.Next.URL }}"><span class="arrow">Older Posts →</span></a>
+  </span>
   {{ end }}
 </div>
 {{ end }}
