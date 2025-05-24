@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="{{ .Site.Data.site.language }}">
+<html lang="{{ .Site.Language.Lang }}">
 
 {{ partial "head.html" . }}
 
@@ -13,8 +13,10 @@
   </div>
   {{ partial "footer.html" . }}
 
-  {{ range .Site.Params.plugins_js }}
-  <script src="{{ . }}"></script>
+  {{ with .Site.Params.plugins_js }}
+    {{ range . }}
+      <script src="{{ . }}"></script>
+    {{ end }}
   {{ end }}
 </body>
 

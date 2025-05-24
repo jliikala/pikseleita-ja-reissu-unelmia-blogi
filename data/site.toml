@@ -1,8 +1,7 @@
 # site.toml
 
 name = "Juha Liikala"
-tagline = "Pixels & Travel Dreams 🌴 - The Blog"
+tagline = "Pixels & Travel Dreams 🌴"
 description = "Oh hi there! 👋 I'm a front-end developer and pixel tweaker from Oulu, Finland. Been tinkering with websites and applications professionally since 2005, and as a hobby even longer. A passionate traveler. Enjoy sci-fi and horror movies. Also, a fan of synthwave and Blade Runner-style musical landscapes. This is my tiny corner of the internet that I like to call home. Welcome!"
-language = "en"
 url = "https://www.juhaliikala.com"
 fediverse_username = "@juhajuhaliikala.com"
