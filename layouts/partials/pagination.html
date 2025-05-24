@@ -1,18 +1,20 @@
 {{ $pag := $.Paginator }}
 
-<nav id="post-nav">
-    {{ if $pag.HasPrev }}
-        <span class="prev">
-			<a href="{{ $pag.Prev.URL }}" title="Previous Page">
-				<span class="arrow">←</span> Newer Posts
-			</a>
-        </span>
-    {{ end }}
-    {{ if $pag.HasNext }}
-        <span class="next">
-            <a href="{{ $pag.Next.URL }}">
-                Older Posts <span class="arrow">→</span>
-            </a>
-        </span>
-    {{ end }}
+{{ if or $pag.HasPrev $pag.HasNext }}
+<nav id="post-nav" class="post-nav" role="navigation" aria-label="Pagination">
+  {{ if $pag.HasPrev }}
+    <span class="prev">
+      <a href="{{ $pag.Prev.URL }}" rel="prev" title="Previous Page">
+        <span class="arrow" aria-hidden="true">←</span> Newer Posts
+      </a>
+    </span>
+  {{ end }}
+  {{ if $pag.HasNext }}
+    <span class="next">
+      <a href="{{ $pag.Next.URL }}" rel="next" title="Next Page">
+        Older Posts <span class="arrow" aria-hidden="true">→</span>
+      </a>
+    </span>
+  {{ end }}
 </nav>
+{{ end }}
