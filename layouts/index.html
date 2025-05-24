@@ -4,5 +4,9 @@
   <p>{{ .File.Path }} — Type: {{ .Type }}</p>
 {{ end }}
 
+{{ range .Site.Pages }}
+  <p>{{ .File.Path }} — Kind: {{ .Kind }} — Type: {{ .Type }}</p>
+{{ end }}
+
 </div>
 {{ end }}
