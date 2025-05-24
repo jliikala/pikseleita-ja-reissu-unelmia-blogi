@@ -1,15 +1,25 @@
 {{ define "main" }}
-<div class="posts h-feed">
-  {{ range .Site.RegularPages }}
-    {{ with .File }}
-      <p>{{ .Path }} — Type: {{ $.Type }}</p>
-    {{ end }}
-  {{ end }}
+  {{ $posts := where .Site.RegularPages "Type" "post" | sort "Date" "desc" }}
+  {{ $paginator := .Paginate $posts }}
 
-  {{ range .Site.Pages }}
-    {{ with .File }}
-      <p>{{ .Path }} — Kind: {{ $.Kind }} — Type: {{ $.Type }}</p>
+  <div class="posts h-feed">
+    {{ range $paginator.Pages }}
+      <article class="post-preview h-entry {{ range .Params.categories }} {{ . | urlize | lower }}{{ end }}">
+        <a href="{{ .Permalink }}" class="post-date u-url">
+          <time class="dt-published" datetime="{{ .Date.Format "2006-01-02T15:04:05-07:00" }}">{{ .Date.Format "Jan 2, 2006" }}</time>
+        </a>
+        <h2 class="post-title p-name"><a href="{{ .Permalink }}">{{ .Title }}</a></h2>
+        <div class="p-summary">{{ .Summary | safeHTML }}</div>
+      </article>
     {{ end }}
-  {{ end }}
-</div>
+  </div>
+
+  <div class="post-nav">
+    {{ if $paginator.HasPrev }}
+      <a href="{{ $paginator.Prev.URL }}">← Newer Posts</a>
+    {{ end }}
+    {{ if $paginator.HasNext }}
+      <a href="{{ $paginator.Next.URL }}">Older Posts →</a>
+    {{ end }}
+  </div>
 {{ end }}
