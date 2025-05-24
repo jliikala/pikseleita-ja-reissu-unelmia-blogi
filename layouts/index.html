@@ -1,12 +1,15 @@
 {{ define "main" }}
 <div class="posts h-feed">
   {{ range .Site.RegularPages }}
-  <p>{{ .File.Path }} — Type: {{ .Type }}</p>
-{{ end }}
+    {{ with .File }}
+      <p>{{ .Path }} — Type: {{ $.Type }}</p>
+    {{ end }}
+  {{ end }}
 
-{{ range .Site.Pages }}
-  <p>{{ .File.Path }} — Kind: {{ .Kind }} — Type: {{ .Type }}</p>
-{{ end }}
-
+  {{ range .Site.Pages }}
+    {{ with .File }}
+      <p>{{ .Path }} — Kind: {{ $.Kind }} — Type: {{ $.Type }}</p>
+    {{ end }}
+  {{ end }}
 </div>
 {{ end }}
