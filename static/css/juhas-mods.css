@@ -246,12 +246,12 @@ article .p-summary a:visited, article .post-content a:visited, .post a:visited {
   margin-bottom: 1rem;
 }
 
-.post_list article {
+.post-list article {
   border-bottom: 1px dashed var(--border-color);
   margin-bottom: 2rem;
 }
 
-.post_list article:last-of-type, .full-archives div:last-of-type {
+.post-list article:last-of-type, .full-archives div:last-of-type {
   border-bottom: none;
 }
 
