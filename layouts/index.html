@@ -1,6 +1,11 @@
 {{ define "main" }}
 <div class="posts h-feed">
-  <p>{{ $posts := where .Site.RegularPages "Type" "post" }}
-  Total posts found: {{ len $posts }}</p>
+  {{ $posts := where .Site.RegularPages "Type" "post" }}
+Total posts found: {{ len $posts }}
+
+{{ range $posts }}
+  <p>{{ .File.Path }} - {{ .Date }} - Draft: {{ .Draft }}</p>
+{{ end }}
+
 </div>
 {{ end }}
