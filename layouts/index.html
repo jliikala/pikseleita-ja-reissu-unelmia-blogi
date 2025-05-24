@@ -1,7 +1,7 @@
 {{ define "main" }}
 <div class="posts h-feed">
   <div class="post-list" role="main">
-    {{ $posts := (where .Site.RegularPages "Type" "post") | sort "Date" "desc" }}
+    {{ $posts := (where .Site.RegularPages "Type" "post") | where "Date" "ne" nil | sort "Date" "desc" }}
     {{ $paginator := .Paginate $posts }}
     {{ range $paginator.Pages }}
       <article class="post-preview h-entry {{ with .Params.categories }}{{ delimit (apply . "urlize" ".") " " | lower }}{{ end }}">
